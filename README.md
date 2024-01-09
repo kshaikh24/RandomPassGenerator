@@ -1,7 +1,6 @@
 # Random Password Generator
 Challenge 05
 
-# Using Javascript for password generation
 ## Description 
 
 I was tasked to create an application for an employee to generate a random password, based on custom criteria of what characters to use.
@@ -29,6 +28,8 @@ npm install
 npm start
 
 ## Usage 
+
+Deployed site: https://kshaikh24.github.io/RandomPassGenerator/
 
 Website should look as the following screenshots show.
 
