@@ -105,6 +105,7 @@ var specialCharacters = [
   ];
   
   // Function to prompt user for password options
+  function generatePassword() {
   var passwordLength = prompt("How many characters would you like your password to have? (8-128 Characters)");
 
   if (passwordLength < 8) {
@@ -131,9 +132,17 @@ var specialCharacters = [
 
 
   // Function to generate password with user input
-  function generatePassword() {
-    var passwordOptions = getPasswordOptions();
+  var characters = "";
+  if (includeSpecialCharacters) characters += specialCharacters;
+  if (includeNumericCharacters) characters += numericCharacters;
+  if (includeLowercaseCharacters) characters += lowerCaseCharacters;
+  if (includeUppercaseCharacters) characters += upperCaseCharacters;
 
+  var password = "";
+  for (var i = 0; i < passwordLength; i++) {
+      var randomIndex = Math.floor(Math.random() * characters.length);
+      password += characters.charAt(randomIndex);
+  }
     
   }
   
