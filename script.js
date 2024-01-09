@@ -1,4 +1,4 @@
-//  Pseudo code for password generator:
+//  Pseudo code for password generator: ---------------------------------------
 //  User Clicks Button
 //  "How many characters would you like your password to have? >passwordLength"
 // if Person enters <8 "YOU HAVE TOO FEW CHARACTERS" > Alert
@@ -12,9 +12,10 @@
 // If include character
 //  Create a for loop using passwordLength and Math.random to generate password
 //  Return the generated password
-
+// -----------------------------------------------------------------------------
 
 // Array of special characters to be included in password
+
 var specialCharacters = [
     '@',
     '%',
@@ -106,6 +107,7 @@ var specialCharacters = [
   
   // Function to prompt user for password options
   function generatePassword() {
+
   var passwordLength = prompt("How many characters would you like your password to have? (8-128 Characters)");
 
   if (passwordLength < 8) {
@@ -117,19 +119,15 @@ var specialCharacters = [
   }
 
   var includeSpecialCharacters = confirm("Would you like to include Special characters? (!@£$%)") ? true : false;
-  
   var includeNumericCharacters = confirm("Would you like to include Numeric characters? (12345)") ? true : false;
+  var includeLowercaseCharacters = confirm("Would you like to include Lowercase characters? (abcde)") ? true : false;
+  var includeUppercaseCharacters = confirm("Would you like to include Uppercase characters? (ABCDE)") ? true : false;
 
-  var includeLowerCasedCharacters = confirm("Would you like to include Lowercase characters? (abcde)") ? true : false;
 
-  var includeUpperCasedCharacters = confirm("Would you like to include Uppercase characters? (ABCDE") ? true : false;
-  
   if (!includeSpecialCharacters && !includeNumericCharacters && !includeLowercaseCharacters && !includeUppercaseCharacters) {
     alert("You need to select at least one character type!");
     return;
 }
-    
-
 
   // Function to generate password with user input
   var characters = [];
@@ -138,15 +136,15 @@ var specialCharacters = [
     if (includeLowercaseCharacters) characters = characters.concat(lowerCasedCharacters);
     if (includeUppercaseCharacters) characters = characters.concat(upperCasedCharacters);
 
+    var password = "";
+    for (var i = 0; i < passwordLength; i++) {
+        var randomIndex = Math.floor(Math.random() * characters.length);
+        password += characters[randomIndex];
+    } 
 
-  var password = "";
-  for (var i = 0; i < passwordLength; i++) {
-      var randomIndex = Math.floor(Math.random() * characters.length);
-      password += characters.charAt(randomIndex);
-  }
     return password;
 }
-  
+
   // Get references to the #generate element
   var generateBtn = document.querySelector('#generate');
   
@@ -160,6 +158,11 @@ var specialCharacters = [
   
   // Add event listener to generate button
   generateBtn.addEventListener('click', writePassword);
+
+
+
+
+
 
 
 
