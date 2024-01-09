@@ -106,15 +106,28 @@ var specialCharacters = [
   
   // Function to prompt user for password options
   var passwordLength = prompt("How many characters would you like your password to have? (8-128 Characters)");
-  
+
   if (passwordLength < 8) {
-    alert("TOO FEW CHARACTERS!");
-    return:
+    alert("TOO FEW CHARACTERS! (8-128 Characters) ");
+    return;
   } else if (passwordLength > 128) {
-    alert("TOO MANY CHARACTERS!");
+    alert("TOO MANY CHARACTERS! (8-128 Characters)");
     return;
   }
 
+  var includeSpecialCharacters = confirm("Would you like to include Special characters? (!@£$%)") ? true : false;
+  
+  var includeNumericCharacters = confirm("Would you like to include Numeric characters? (12345)") ? true : false;
+
+  var includeLowerCasedCharacters = confirm("Would you like to include Lowercase characters? (abcde)") ? true : false;
+
+  var includeUpperCasedCharacters = confirm("Would you like to include Uppercase characters? (ABCDE") ? true : false;
+  
+  if (!(includeSpecialCharacters || includeNumericCharacters || includeLowercaseCharacters || includeUppercaseCharacters)) {
+    alert("You need to select at least one character type!");
+    return;
+
+    
 
 
   // Function to generate password with user input
