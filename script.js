@@ -144,8 +144,8 @@ var specialCharacters = [
       var randomIndex = Math.floor(Math.random() * characters.length);
       password += characters.charAt(randomIndex);
   }
-    
-  }
+    return password;
+}
   
   // Get references to the #generate element
   var generateBtn = document.querySelector('#generate');
