@@ -106,11 +106,22 @@ var specialCharacters = [
   
   // Function to prompt user for password options
   var passwordLength = prompt("How many characters would you like your password to have? (8-128 Characters)");
+  
+  if (passwordLength < 8) {
+    alert("TOO FEW CHARACTERS!");
+    return:
+  } else if (passwordLength > 128) {
+    alert("TOO MANY CHARACTERS!");
+    return;
+  }
+
+
 
   // Function to generate password with user input
   function generatePassword() {
     var passwordOptions = getPasswordOptions();
 
+    
   }
   
   // Get references to the #generate element
