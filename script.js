@@ -132,11 +132,12 @@ var specialCharacters = [
 
 
   // Function to generate password with user input
-  var characters = "";
-  if (includeSpecialCharacters) characters += specialCharacters;
-  if (includeNumericCharacters) characters += numericCharacters;
-  if (includeLowercaseCharacters) characters += lowerCaseCharacters;
-  if (includeUppercaseCharacters) characters += upperCaseCharacters;
+  var characters = [];
+    if (includeSpecialCharacters) characters = characters.concat(specialCharacters);
+    if (includeNumericCharacters) characters = characters.concat(numericCharacters);
+    if (includeLowercaseCharacters) characters = characters.concat(lowerCasedCharacters);
+    if (includeUppercaseCharacters) characters = characters.concat(upperCasedCharacters);
+
 
   var password = "";
   for (var i = 0; i < passwordLength; i++) {
