@@ -123,10 +123,10 @@ var specialCharacters = [
 
   var includeUpperCasedCharacters = confirm("Would you like to include Uppercase characters? (ABCDE") ? true : false;
   
-  if (!(includeSpecialCharacters || includeNumericCharacters || includeLowercaseCharacters || includeUppercaseCharacters)) {
+  if (!includeSpecialCharacters && !includeNumericCharacters && !includeLowercaseCharacters && !includeUppercaseCharacters) {
     alert("You need to select at least one character type!");
     return;
-
+}
     
 
 
