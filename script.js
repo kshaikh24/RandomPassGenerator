@@ -1,3 +1,19 @@
+//  Pseudo code for password generator:
+//  User Clicks Button
+//  "How many characters would you like your password to have? >passwordLength"
+// if Person enters <8 "YOU HAVE TOO FEW CHARACTERS" > Alert
+// else if Person adds >128 "YOU HAVE TOO MANY CHARACTERS" > Alert
+//  Would you like to include specialCharacters? T/F > Confirm
+//  Would you like to include numericCharacters? T/F  > Confirm
+//  Would you like to include lowercaseCharacters? T/F  > Confirm
+//  Would you like to include UpperCasedCharacters? T/F  > Confirm
+//  If all are false, Alert "You need at least one character type!"
+//  Generate random password using user selected character types
+// If include character
+//  Create a for loop using passwordLength and Math.random to generate password
+//  Return the generated password
+
+
 // Array of special characters to be included in password
 var specialCharacters = [
     '@',
@@ -89,58 +105,8 @@ var specialCharacters = [
   ];
   
   // Function to prompt user for password options
-  function getPasswordOptions() {
-    var passwordLength = prompt("How long would you like your password to be? (8-128 characters)");
-    var error = true;
-    while (error) {
-      if (passwordLength < 8 || passwordLength > 128) {
-        alert("Please input a number between 8 and 128.");
-        passwordLength = prompt("How long would you like your password to be? (8-128 characters)");
-      } else {
-        error = false;
-        var charType = [{
-          type: "special characters",
-          character: specialCharacters,
-          incl_char_type: false
-        },
-        {
-          type: "numeric characters",
-          character: numericCharacters,
-          incl_char_type: false
-        },
-        {
-          type: "lowercase characters",
-          character: lowerCasedCharacters,
-          incl_char_type: false
-        },
-        {
-          type: "uppercase characters",
-          character: upperCasedCharacters,
-          incl_char_type: false
-        }];
-        var charCheck = false;
-        while (!charCheck) {
-          for (let i = 0; i < charType.length; i++) { // asks the questions
-            charType[i].incl_char_type = confirm("Would you like to include " + charType[i].type + "?");
-          };
-          for (let i = 0; i < charType.length; i++) { // checks if any say yes
-            if (charType[i].incl_char_type === true) {
-              charCheck = true;
-            }
-          };
-          if (!charCheck) {
-            alert("You need at least one character type!.");
-          }
-        }
-        return {
-          password_length: passwordLength,
-          char_types: charType
-        };
-      }
-    }
-    // var passwordCharacters = [passwordLength];
-  }
-  
+  var passwordLength = prompt("How many characters would you like your password to have? (8-128 Characters)");
+
   // Function to generate password with user input
   function generatePassword() {
     var passwordOptions = getPasswordOptions();
@@ -162,17 +128,8 @@ var specialCharacters = [
   generateBtn.addEventListener('click', writePassword);
 
 
-//  Pseudo code for password generator:
-//  User Clicks Button
-//  "How many characters would you like your password to have? >passwordLength"
-//  Person enters <8 "YOU HAVE TOO FEW CHARACTERS" > Alert
-//  Person adds >128 "YOU HAVE TOO MANY CHARACTERS" > Alert
-//  Would you like to include specialCharacters? Y/N > Confirm
-//  Would you like to include numericCharacters? Y/N  > Confirm
-//  Would you like to include lowercaseCharacters? Y/N  > Confirm
-//  Would you like to include UpperCasedCharacters? Y/N  > Confirm
-//  If all are false, Alert "You need at least one character type!"
-// 
+
+
 
 
 
