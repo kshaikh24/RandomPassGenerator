@@ -23,7 +23,7 @@ I learned how to implement what i've learned in Javascript, notably the const ke
 
 ## Installation
 
-git clone INSERT *****
+git clone https://github.com/kshaikh24/RandomPassGenerator
 cd ../path/to/the/file
 npm install
 npm start
