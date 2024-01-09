@@ -35,6 +35,7 @@ Website should look as the following screenshots show.
 
 <img width="726" alt="Password_img" src="https://github.com/kshaikh24/RandomPassGenerator/assets/152036483/2f76cc91-333d-4937-ab44-fb31f93e6a2d">
 
+
 Click button to generate password, and respond as you wish to the confirms.
 Your unique generated password will be displayed within the text area.
 
